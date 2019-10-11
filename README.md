@@ -2,8 +2,7 @@ Install
 --------
 
 ```
-$ pacman -S gnote
-$ brew install gnote
+go get -u github.com/gutenye/gnote
 
 $ edit ~/.gnoterc
 
