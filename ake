@@ -5,7 +5,7 @@ VERSION=$(cat VERSION)
 publish() {
   build
   package
-  release
+  # upload to github release
 }
 
 
@@ -18,10 +18,6 @@ package() {
   tar zcvf macos.tar.gz -C dist  .
 }
 
-
-release() {
-  github-release --verbose upload --user gutenye --repo gnote --tag $VERSION --name macos.tar.gz --file macos.tar.gz
-}
 
 build-all() {
   ./build.sh
