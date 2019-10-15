@@ -1,8 +1,8 @@
 package main
 
 import (
-	. "github.com/gutenye/gnote-cli/globals/rc"
-	. "github.com/gutenye/gnote-cli/globals/ui"
+	. "github.com/gutenye/gnote/globals/rc"
+	. "github.com/gutenye/gnote/globals/ui"
 	"github.com/ogier/pflag"
 	"io/ioutil"
   "gopkg.in/yaml.v1"

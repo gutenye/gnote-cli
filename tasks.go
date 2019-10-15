@@ -1,8 +1,8 @@
 package main
 
 import (
-	. "github.com/gutenye/gnote-cli/globals/rc"
-	. "github.com/gutenye/gnote-cli/globals/ui"
+	. "github.com/gutenye/gnote/globals/rc"
+	. "github.com/gutenye/gnote/globals/ui"
 	"os"
 	"path/filepath"
 	"github.com/howeyc/fsnotify"

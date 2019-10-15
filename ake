@@ -2,20 +2,33 @@
 
 VERSION=$(cat VERSION)
 
+publish() {
+  build
+  package
+  release
+}
+
+
 build() {
-  go build -o gnotes
+  mkdir -p dist
+  go build -o dist/gnote
+}
+
+package() {
+  tar zcvf macos.tar.gz -C dist  .
+}
+
+
+release() {
+  github-release --verbose upload --user gutenye --repo gnote --tag $VERSION --name macos.tar.gz --file macos.tar.gz
 }
 
 build-all() {
   ./build.sh
 }
 
-release() {
-  #github-release --verbose release --user gutenye --repo gnote-cli --tag $VERSION
-  github-release --verbose upload --user gutenye --repo gnote-cli --tag $VERSION --name gnote.homebrew.amd64-$VERSION.tar.gz --file gnote.homebrew.amd64-$VERSION.tar.gz
-}
-
 case "$1" in
+  publish ) publish ;;
   build ) build ;;
   release ) release ;;
   build-all ) build-all ;;
