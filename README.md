@@ -7,6 +7,7 @@ edit ~/.gnoterc
   output: ~/tags
   mark: ∗
 
+
 # macOS
 brew install gutenye/alt-gnote
 brew start  gnote
@@ -19,10 +20,18 @@ pacman -S gnote
 go get -u github.com/gutenye/gnote
 ```
 
+**Fix bad file descriptor**
+launchctl limit maxfiles 90000
+Restart system
+
+
 Development
 --------
 
 ```
-$ dep ensure
-$ ./ake build
+go get -u github.com/gutenye/gnote
+cd ~/go/src/github.com/gutenye/gnote
+dep ensure
+go run .
+./ake build
 ```
