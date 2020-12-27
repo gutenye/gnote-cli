@@ -18,12 +18,11 @@ pacman -S gnote
 
 # From source
 go get -u github.com/gutenye/gnote
-```
 
-**Fix bad file descriptor**
+# Fix bad file descriptor
 launchctl limit maxfiles 90000
 Restart system
-
+```
 
 Development
 --------
